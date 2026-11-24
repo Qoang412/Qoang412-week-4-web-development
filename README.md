@@ -49,3 +49,24 @@ Contains the logo displayed beside the main heading.
 
 ## Author
 Budget Tracker Project
+# My Budget Tracker
+
+## Project Description
+A simple web application for organizing and tracking personal expenses.
+
+## Project Files
+- **index.html:** Provides the webpage structure, expense form, table and multimedia.
+- **style.css:** Controls colors, layout, table design and responsiveness.
+- **script.js:** Reserved for future JavaScript functionality.
+- **budget-logo.svg:** Displays the project logo.
+
+## Week 2 Features
+- Expense table with five sample records.
+- Category dropdown with five options.
+- Form validation using required attributes.
+- Logo and embedded YouTube video.
+- Interactive instructions using details and summary.
+- Advanced CSS selectors and hover effects.
+
+## Technologies
+HTML5 and CSS3.

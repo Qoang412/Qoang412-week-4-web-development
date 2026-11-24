@@ -1,98 +1,5 @@
+
 /* General page styling */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #F1F3F5;
-    margin: 0;
-    padding: 25px;
-    color: #263238;
-}
-
-/* Header styling */
-header {
-    background-color: #101D35;
-    color: #FFFFFF;
-    text-align: center;
-    padding: 35px;
-    border-radius: 12px;
-    border-bottom: 5px solid #D4A017;
-}
-
-/* Main heading */
-header h1 {
-    color: red;
-    font-size: 32px;
-}
-
-/* Header description */
-header p {
-    color: #E0E5ED;
-}
-
-/* Add Expense section */
-#add-expense {
-    background-color: #FFFFFF;
-    padding: 25px;
-    margin: 25px auto;
-    border-radius: 12px;
-    max-width: 600px;
-    border-left: 5px solid #D4A017;
-}
-
-/* Expense form */
-.expense-form {
-    border: 1px solid #DCE1E8;
-}
-
-/* Your Expenses section */
-.expense-list {
-    background-color: #E8EEF5;
-    padding: 25px;
-    margin: 25px auto;
-    border-radius: 12px;
-    max-width: 600px;
-    border-left: 5px solid #234B75;
-}
-
-/* Section headings */
-h2 {
-    color: #101D35;
-}
-
-/* Input fields */
-input {
-    display: block;
-    width: 95%;
-    padding: 12px;
-    margin: 10px 0 20px;
-    border: 1px solid #BCC7D4;
-    border-radius: 7px;
-    background-color: #FAFBFC;
-    color: #263238;
-    font-size: 15px;
-}
-
-/* Input labels */
-label {
-    font-weight: bold;
-    color: #34445A;
-}
-
-/* Add Expense button */
-#add-expense-btn {
-    background-color: #234B75;
-    color: white;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 7px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-#add-expense-btn:hover {
-    background-color: #101D35;
-}
-
-/* 1. General page styling */
 * {
     box-sizing: border-box;
 }
@@ -105,7 +12,7 @@ body {
     color: #263238;
 }
 
-/* 2. Website header */
+/* Main header */
 .main-header {
     background-color: #101D35;
     color: white;
@@ -113,6 +20,11 @@ body {
     padding: 35px;
     border-radius: 12px;
     border-bottom: 5px solid #D4A017;
+}
+
+.main-header img {
+    display: block;
+    margin: 0 auto 10px;
 }
 
 .main-header h1 {
@@ -124,13 +36,13 @@ body {
     color: #E0E5ED;
 }
 
-/* 3. Main content */
+/* Main content */
 .container {
-    max-width: 700px;
+    max-width: 850px;
     margin: 30px auto;
 }
 
-/* 4. Section cards */
+/* Cards */
 .card {
     background-color: white;
     padding: 25px;
@@ -147,13 +59,12 @@ body {
     border-left: 5px solid #234B75;
 }
 
-/* 5. Section headings */
 h2 {
     color: #101D35;
     margin-top: 0;
 }
 
-/* 6. Form labels */
+/* Form styling */
 label {
     display: block;
     font-weight: bold;
@@ -162,8 +73,9 @@ label {
     color: #34445A;
 }
 
-/* 7. Input fields */
-input {
+/* Advanced selector 1: descendant selector */
+.add-expense-section input,
+.add-expense-section select {
     display: block;
     width: 100%;
     padding: 12px;
@@ -172,7 +84,19 @@ input {
     font-size: 15px;
 }
 
-/* 8. Add Expense button */
+/* Advanced selector 2: focus pseudo-class */
+input:focus,
+select:focus {
+    outline: 2px solid #D4A017;
+    border-color: #234B75;
+}
+
+/* Advanced selector 3: negation pseudo-class */
+input:not([type="submit"]) {
+    background-color: #FAFCFE;
+}
+
+/* Button */
 #add-expense-btn {
     width: 100%;
     margin-top: 22px;
@@ -189,38 +113,75 @@ input {
     background-color: #101D35;
 }
 
-/* 9. Expense list */
-#expense-list {
-    padding-left: 20px;
-}
-
-#expense-list li {
-    background-color: #F1F3F5;
-    padding: 12px;
-    margin-bottom: 10px;
-    border-radius: 6px;
-}
-
-/* Fix input label arrangement */
-#expense-form label {
-    display: block;
+/* Expense table */
+#expense-table {
+    width: 100%;
+    border-collapse: collapse;
     margin-top: 15px;
-    margin-bottom: 8px;
-    font-weight: bold;
 }
 
-/* Arrange input fields vertically */
-#expense-form input {
-    display: block;
-    width: 100%;
-    margin-bottom: 15px;
+#expense-table th,
+#expense-table td {
+    border: 1px solid #BCC7D4;
+    padding: 13px;
+    text-align: left;
+}
+
+/* Colored table header */
+#expense-table thead {
+    background-color: #101D35;
+    color: white;
+}
+
+/* Advanced selector 4: position pseudo-class */
+#expense-table tbody tr:nth-child(even) {
+    background-color: #E8EEF5;
+}
+
+/* Table hover effect */
+#expense-table tbody tr:hover {
+    background-color: #D4E4F5;
+}
+
+/* Descendant selector */
+.expenses-section td {
+    color: #263238;
+}
+
+/* Details section */
+details {
     padding: 12px;
-    box-sizing: border-box;
+    background-color: #F1F3F5;
+    border-radius: 7px;
 }
 
-/* Add spacing to the button */
-#add-expense-btn {
+summary {
+    cursor: pointer;
+    font-weight: bold;
+    color: #234B75;
+}
+
+/* Video section */
+.video-section iframe {
     display: block;
-    width: 100%;
-    margin-top: 20px;
+    max-width: 100%;
+    margin-top: 15px;
+    border-radius: 8px;
+}
+
+/* Responsive layout */
+@media (max-width: 600px) {
+    body {
+        padding: 12px;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    #expense-table th,
+    #expense-table td {
+        padding: 8px;
+        font-size: 13px;
+    }
 }

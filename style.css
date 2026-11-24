@@ -1,0 +1,226 @@
+/* General page styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F1F3F5;
+    margin: 0;
+    padding: 25px;
+    color: #263238;
+}
+
+/* Header styling */
+header {
+    background-color: #101D35;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 35px;
+    border-radius: 12px;
+    border-bottom: 5px solid #D4A017;
+}
+
+/* Main heading */
+header h1 {
+    color: red;
+    font-size: 32px;
+}
+
+/* Header description */
+header p {
+    color: #E0E5ED;
+}
+
+/* Add Expense section */
+#add-expense {
+    background-color: #FFFFFF;
+    padding: 25px;
+    margin: 25px auto;
+    border-radius: 12px;
+    max-width: 600px;
+    border-left: 5px solid #D4A017;
+}
+
+/* Expense form */
+.expense-form {
+    border: 1px solid #DCE1E8;
+}
+
+/* Your Expenses section */
+.expense-list {
+    background-color: #E8EEF5;
+    padding: 25px;
+    margin: 25px auto;
+    border-radius: 12px;
+    max-width: 600px;
+    border-left: 5px solid #234B75;
+}
+
+/* Section headings */
+h2 {
+    color: #101D35;
+}
+
+/* Input fields */
+input {
+    display: block;
+    width: 95%;
+    padding: 12px;
+    margin: 10px 0 20px;
+    border: 1px solid #BCC7D4;
+    border-radius: 7px;
+    background-color: #FAFBFC;
+    color: #263238;
+    font-size: 15px;
+}
+
+/* Input labels */
+label {
+    font-weight: bold;
+    color: #34445A;
+}
+
+/* Add Expense button */
+#add-expense-btn {
+    background-color: #234B75;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 7px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#add-expense-btn:hover {
+    background-color: #101D35;
+}
+
+/* 1. General page styling */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F1F3F5;
+    margin: 0;
+    padding: 25px;
+    color: #263238;
+}
+
+/* 2. Website header */
+.main-header {
+    background-color: #101D35;
+    color: white;
+    text-align: center;
+    padding: 35px;
+    border-radius: 12px;
+    border-bottom: 5px solid #D4A017;
+}
+
+.main-header h1 {
+    color: #D4A017;
+    font-size: 32px;
+}
+
+.main-header p {
+    color: #E0E5ED;
+}
+
+/* 3. Main content */
+.container {
+    max-width: 700px;
+    margin: 30px auto;
+}
+
+/* 4. Section cards */
+.card {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+#add-expense {
+    border-left: 5px solid #D4A017;
+}
+
+#your-expenses {
+    border-left: 5px solid #234B75;
+}
+
+/* 5. Section headings */
+h2 {
+    color: #101D35;
+    margin-top: 0;
+}
+
+/* 6. Form labels */
+label {
+    display: block;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 8px;
+    color: #34445A;
+}
+
+/* 7. Input fields */
+input {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #BCC7D4;
+    border-radius: 7px;
+    font-size: 15px;
+}
+
+/* 8. Add Expense button */
+#add-expense-btn {
+    width: 100%;
+    margin-top: 22px;
+    padding: 13px;
+    background-color: #234B75;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#add-expense-btn:hover {
+    background-color: #101D35;
+}
+
+/* 9. Expense list */
+#expense-list {
+    padding-left: 20px;
+}
+
+#expense-list li {
+    background-color: #F1F3F5;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+}
+
+/* Fix input label arrangement */
+#expense-form label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+/* Arrange input fields vertically */
+#expense-form input {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 12px;
+    box-sizing: border-box;
+}
+
+/* Add spacing to the button */
+#add-expense-btn {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+}

@@ -1,82 +1,76 @@
-
-# My Personal Budget Tracker
+# SpendWise Dashboard
 
 ## Project Description
 
-My Personal Budget Tracker is a simple and user-friendly web application designed to help users organize, record, and monitor their daily expenses.
+SpendWise is a responsive personal finance dashboard designed to help users view and organize their monthly financial information.
 
-The project was developed using HTML, CSS, and JavaScript. It focuses on creating a clean interface that makes expense tracking easier and more organized.
+This Week 4 project focuses on building a modern dashboard layout using CSS Grid and Flexbox. It uses realistic static financial information and does not require JavaScript functionality.
 
 ## Technologies Used
 
-- HTML5 – Website structure and content.
-- CSS3 – Visual design, styling, colors, typography, and layout.
-- JavaScript – Expense form interactions.
-- Google Fonts – Poppins and Inter typography.
+- HTML5 – Dashboard structure and content.
+- CSS3 – Visual styling and responsive layouts.
+- CSS Grid – Overall dashboard and category card layout.
+- Flexbox – Sidebar navigation, header and card content alignment.
+- CSS Custom Properties – Centralized color theme.
+- Media Queries – Responsive mobile layout.
 
-## Project Files
+## Project Structure
 
 ### 1. index.html
-Provides the structure of the website, including:
-- Main heading and project logo.
-- Expense entry form.
-- Expense category dropdown.
-- Expense table containing sample records.
-- Collapsible usage instructions.
-- Embedded budgeting tips video.
 
-### 2. style.css
-Controls the visual appearance of the application, including:
-- Consistent forest-green, white, and light-grey color palette.
-- Google Fonts typography using Poppins and Inter.
-- Styled headings, buttons, labels, and form inputs.
-- Expense table borders and alternating row colors.
-- Hover and focus effects.
-- CSS Box Model using margin, padding, borders, and border-radius.
-- Responsive styling for smaller screens.
-
-### 3. script.js
-Contains JavaScript code responsible for handling expense form interactions.
-
-### 4. budget-logo.svg
-Contains the SVG logo displayed in the website header.
-
-## Project Features
-
-- User-friendly expense entry form.
-- Five expense categories:
+Contains:
+- SpendWise branding and sidebar navigation.
+- Dashboard header and account profile.
+- Financial overview section.
+- Six financial category cards:
   - Food
   - Transport
   - Rent
   - Entertainment
-  - Other
-- Expense table with sample records.
-- Form validation.
-- Interactive collapsible instructions.
-- Embedded YouTube budgeting video.
-- Consistent visual identity and color palette.
-- Responsive webpage design.
+  - Savings
+  - Utilities
+- Dashboard footer.
 
-## Week 3: Visual Identity and CSS Design
+### 2. style.css
 
-During Week 3, the application was improved through CSS styling without introducing new HTML structure or functionality.
+Controls the dashboard appearance and layout through:
 
-The visual improvements included:
+- CSS Grid for the main dashboard structure.
+- Flexbox for navigation, header and card content.
+- CSS custom properties defined in `:root`.
+- Responsive design below 768px.
+- Card hover and keyboard-focus animations.
+- Dark theme using `prefers-color-scheme: dark`.
+- Consistent spacing, borders, colors and shadows.
 
-1. **Color Palette:** Forest green, professional green, white, and light grey.
-2. **Typography:** Poppins for headings and Inter for body text.
-3. **Table Styling:** Styled table headers, cell spacing, borders, alternating row colors, and hover effects.
-4. **Form Styling:** Improved input fields, labels, buttons, rounded corners, and focus effects.
-5. **CSS Box Model:** Applied margin, padding, borders, and border-radius to create visually distinct cards.
-6. **Responsive Design:** Improved the layout for smaller screens.
+## Responsive Design
+
+The dashboard uses a media query to change into a single-column layout on screens smaller than 768px.
+
+The layout was tested using the browser's DevTools Device Toolbar.
+
+## Card Micro-interactions
+
+Dashboard cards include subtle hover and keyboard-focus effects using CSS transforms and box shadows.
+
+The transitions last 200 milliseconds.
+
+## Dark Theme
+
+A dark theme is included using the CSS media query:
+
+`@media (prefers-color-scheme: dark)`
+
+The dark theme changes the CSS custom properties to provide a darker interface.
 
 ## How to Run the Project
 
-1. Download or clone this repository.
+1. Clone or download the repository.
 2. Open the project folder in Visual Studio Code.
-3. Open `index.html` in a web browser.
-4. Alternatively, use the VS Code Live Server extension.
+3. Open `index.html` in a browser.
+4. Alternatively, use the Live Server extension.
 
 ## Author
 
-Budget Tracker Project
+SpendWise Dashboard – Week 4 Project

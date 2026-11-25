@@ -4,176 +4,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>My Budget Tracker</title>
-
+    <meta name="description" content="SpendWise personal finance dashboard">
+    <title>SpendWise | Finance Dashboard</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <!-- Main Heading -->
-    <header class="main-header">
-        <img
-            src="budget-logo.svg"
-            alt="Budget Tracker logo"
-            width="65"
-        >
+    <div class="dashboard">
 
-        <h1>My Budget Tracker</h1>
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="brand">
+                <h2>SpendWise</h2>
+                <p>Personal Finance</p>
+            </div>
 
-        <p>Track your income and expenses in one place.</p>
-    </header>
+            <nav class="navigation">
+                <a href="#dashboard" class="nav-item active">Dashboard</a>
+                <a href="#transactions" class="nav-item">Transactions</a>
+                <a href="#categories" class="nav-item">Categories</a>
+                <a href="#budgets" class="nav-item">Budgets</a>
+                <a href="#settings" class="nav-item">Settings</a>
+            </nav>
 
-    <main class="container">
+            <div class="sidebar-footer">
+                <p>Manage your money wisely.</p>
+            </div>
+        </aside>
 
-        <!-- Add Expense Form Card -->
-        <section id="add-expense" class="card add-expense-section">
+        <!-- Main Dashboard -->
+        <main class="main-content" id="dashboard">
 
-            <h2>Add Expense</h2>
+            <!-- Header -->
+            <header class="dashboard-header">
+                <div>
+                    <p class="welcome">Welcome back!</p>
+                    <h1>Financial Overview</h1>
+                </div>
 
-            <form id="expense-form">
+                <div class="profile">
+                    <span class="profile-avatar">KD</span>
+                    <span>My Account</span>
+                </div>
+            </header>
 
-                <label for="expense-name">Expense Name</label>
+            <!-- Dashboard Introduction -->
+            <section class="intro">
+                <h2>Your Spending Dashboard</h2>
+                <p>Monitor your expenses and stay in control of your finances.</p>
+            </section>
 
-                <input
-                    type="text"
-                    id="expense-name"
-                    placeholder="Enter expense name"
-                    required
-                >
+            <!-- Financial Category Cards -->
+            <section class="category-grid" id="categories">
 
-                <label for="expense-amount">Amount (KSh)</label>
+                <article class="category-card" tabindex="0">
+                    <div class="card-top">
+                        <span class="category-icon">🍽️</span>
+                        <span class="card-label">Monthly spending</span>
+                    </div>
+                    <h3>Food</h3>
+                    <p class="amount">KSh 8,500</p>
+                    <p class="card-description">Groceries and meals</p>
+                </article>
 
-                <input
-                    type="number"
-                    id="expense-amount"
-                    placeholder="Enter amount"
-                    min="0.01"
-                    step="0.01"
-                    required
-                >
+                <article class="category-card" tabindex="0">
+                    <div class="card-top">
+                        <span class="category-icon">🚌</span>
+                        <span class="card-label">Monthly spending</span>
+                    </div>
+                    <h3>Transport</h3>
+                    <p class="amount">KSh 4,200</p>
+                    <p class="card-description">Travel and commuting</p>
+                </article>
 
-                <label for="expense-category">Category</label>
+                <article class="category-card" tabindex="0">
+                    <div class="card-top">
+                        <span class="category-icon">🏠</span>
+                        <span class="card-label">Monthly spending</span>
+                    </div>
+                    <h3>Rent</h3>
+                    <p class="amount">KSh 12,000</p>
+                    <p class="card-description">Monthly accommodation</p>
+                </article>
 
-                <select id="expense-category" required>
-                    <option value="">Select a category</option>
-                    <option value="Food">Food</option>
-                    <option value="Transport">Transport</option>
-                    <option value="Rent">Rent</option>
-                    <option value="Entertainment">Entertainment</option>
-                    <option value="Other">Other</option>
-                </select>
+                <article class="category-card" tabindex="0">
+                    <div class="card-top">
+                        <span class="category-icon">🎬</span>
+                        <span class="card-label">Monthly spending</span>
+                    </div>
+                    <h3>Entertainment</h3>
+                    <p class="amount">KSh 2,500</p>
+                    <p class="card-description">Leisure and recreation</p>
+                </article>
 
-                <button type="button" id="add-expense-btn">
-                    Add Expense
-                </button>
+                <article class="category-card" tabindex="0">
+                    <div class="card-top">
+                        <span class="category-icon">💰</span>
+                        <span class="card-label">Monthly savings</span>
+                    </div>
+                    <h3>Savings</h3>
+                    <p class="amount">KSh 6,000</p>
+                    <p class="card-description">Money set aside</p>
+                </article>
 
-            </form>
+                <article class="category-card" tabindex="0">
+                    <div class="card-top">
+                        <span class="category-icon">💡</span>
+                        <span class="card-label">Monthly spending</span>
+                    </div>
+                    <h3>Utilities</h3>
+                    <p class="amount">KSh 3,200</p>
+                    <p class="card-description">Electricity and water</p>
+                </article>
 
-        </section>
+            </section>
 
-        <!-- Expense Table Card -->
-        <section id="your-expenses" class="card expenses-section">
+            <!-- Dashboard Footer -->
+            <footer class="dashboard-footer">
+                <p>SpendWise Dashboard | Week 4 Project</p>
+                <p>Manage your finances. Build your future.</p>
+            </footer>
 
-            <h2>Your Expenses</h2>
-
-            <table id="expense-table">
-
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Amount</th>
-                        <th>Category</th>
-                        <th>Date</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-
-                    <tr>
-                        <td>Lunch</td>
-                        <td>KSh 350</td>
-                        <td>Food</td>
-                        <td>2026-11-20</td>
-                    </tr>
-
-                    <tr>
-                        <td>Bus Fare</td>
-                        <td>KSh 150</td>
-                        <td>Transport</td>
-                        <td>2026-11-20</td>
-                    </tr>
-
-                    <tr>
-                        <td>House Rent</td>
-                        <td>KSh 5,000</td>
-                        <td>Rent</td>
-                        <td>2026-11-21</td>
-                    </tr>
-
-                    <tr>
-                        <td>Movie</td>
-                        <td>KSh 500</td>
-                        <td>Entertainment</td>
-                        <td>2026-11-22</td>
-                    </tr>
-
-                    <tr>
-                        <td>Stationery</td>
-                        <td>KSh 200</td>
-                        <td>Other</td>
-                        <td>2026-11-23</td>
-                    </tr>
-
-                </tbody>
-
-            </table>
-
-        </section>
-
-        <!-- Instructions Card -->
-        <section class="card">
-
-            <h2>How to Use This Tracker</h2>
-
-            <details>
-
-                <summary>Click here to learn how it works</summary>
-
-                <p>
-                    Enter an expense name and amount, then select
-                    a category from the dropdown. The table displays
-                    sample expenses to demonstrate how records
-                    can be organized.
-                </p>
-
-            </details>
-
-        </section>
-
-        <!-- Budgeting Video Card -->
-        <section class="card video-section">
-
-            <h2>Budgeting Tips</h2>
-
-            <p>Watch this budgeting video to learn more.</p>
-
-            <iframe
-                width="560"
-                height="315"
-                src="https://www.youtube.com/embed/-vVp185Sq24"
-                title="Budgeting Tips Video"
-                frameborder="0"
-                allowfullscreen>
-            </iframe>
-
-        </section>
-
-    </main>
-
-    <!-- JavaScript Connection -->
-    <script src="script.js"></script>
+        </main>
+    </div>
 
 </body>
 </html>

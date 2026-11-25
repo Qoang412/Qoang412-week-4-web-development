@@ -1,76 +1,57 @@
-# SpendWise Dashboard
+﻿# SpendWise Dashboard Shell
 
-## Project Description
+## Project Overview
 
-SpendWise is a responsive personal finance dashboard designed to help users view and organize their monthly financial information.
+SpendWise is a responsive personal finance dashboard built using HTML5 and CSS3. It provides a visual overview of financial activities, including income, expenses, savings, and spending categories.
 
-This Week 4 project focuses on building a modern dashboard layout using CSS Grid and Flexbox. It uses realistic static financial information and does not require JavaScript functionality.
+## Features
+
+- Sidebar navigation menu.
+- Dashboard header and user profile.
+- Three financial summary cards.
+- Six expense category cards.
+- Recent transactions section.
+- Responsive layout for mobile and desktop.
+- Light and dark color themes.
+- Hover and keyboard focus micro-interactions.
 
 ## Technologies Used
 
-- HTML5 – Dashboard structure and content.
-- CSS3 – Visual styling and responsive layouts.
-- CSS Grid – Overall dashboard and category card layout.
-- Flexbox – Sidebar navigation, header and card content alignment.
-- CSS Custom Properties – Centralized color theme.
-- Media Queries – Responsive mobile layout.
+- HTML5
+- CSS3
+- CSS Grid
+- Flexbox
+- CSS Custom Properties
+- Media Queries
+- Google Fonts (Inter)
 
-## Project Structure
+## Project Files
 
-### 1. index.html
+### index.html
+Contains the dashboard structure, navigation, header, financial summary cards, six expense categories, recent transactions, and footer.
 
-Contains:
-- SpendWise branding and sidebar navigation.
-- Dashboard header and account profile.
-- Financial overview section.
-- Six financial category cards:
-  - Food
-  - Transport
-  - Rent
-  - Entertainment
-  - Savings
-  - Utilities
-- Dashboard footer.
+### style.css
+Controls the visual appearance of the dashboard. It includes CSS Grid for the overall layout, Flexbox for internal arrangements, CSS variables for the theme, responsive media queries, hover and focus animations, and a dark theme.
 
-### 2. style.css
-
-Controls the dashboard appearance and layout through:
-
-- CSS Grid for the main dashboard structure.
-- Flexbox for navigation, header and card content.
-- CSS custom properties defined in `:root`.
-- Responsive design below 768px.
-- Card hover and keyboard-focus animations.
-- Dark theme using `prefers-color-scheme: dark`.
-- Consistent spacing, borders, colors and shadows.
+### README.md
+Explains the project, its features, technologies, and file structure.
 
 ## Responsive Design
 
-The dashboard uses a media query to change into a single-column layout on screens smaller than 768px.
-
-The layout was tested using the browser's DevTools Device Toolbar.
-
-## Card Micro-interactions
-
-Dashboard cards include subtle hover and keyboard-focus effects using CSS transforms and box shadows.
-
-The transitions last 200 milliseconds.
+The dashboard uses CSS Grid and Flexbox to adapt to different screen sizes. Below 768px, the layout changes into a single-column structure.
 
 ## Dark Theme
 
-A dark theme is included using the CSS media query:
+The dashboard supports system dark mode through:
 
 `@media (prefers-color-scheme: dark)`
 
-The dark theme changes the CSS custom properties to provide a darker interface.
-
-## How to Run the Project
-
-1. Clone or download the repository.
-2. Open the project folder in Visual Studio Code.
-3. Open `index.html` in a browser.
-4. Alternatively, use the Live Server extension.
+The dark theme overrides the root CSS custom properties.
 
 ## Author
 
-SpendWise Dashboard – Week 4 Project
+Koang Duay Gatluak
+
+## Project Purpose
+
+This project was developed as part of the Week 4 Web Development assignment, focusing on rebuilding a financial dashboard using CSS Grid and Flexbox.

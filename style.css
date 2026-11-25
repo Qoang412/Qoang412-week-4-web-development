@@ -1,116 +1,115 @@
 
-/* General page styling */
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap');
+
+/* Universal styling */
 * {
     box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #F1F3F5;
     margin: 0;
-    padding: 25px;
+    padding: 0;
+}
+
+/* Page background and typography */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #F4F7F6;
     color: #263238;
+    line-height: 1.6;
+    padding: 25px;
 }
 
-/* Main header */
+/* Main heading card */
 .main-header {
-    background-color: #101D35;
-    color: white;
+    background-color: #123C35;
+    color: #FFFFFF;
     text-align: center;
-    padding: 35px;
-    border-radius: 12px;
-    border-bottom: 5px solid #D4A017;
-}
-
-.main-header img {
-    display: block;
-    margin: 0 auto 10px;
+    padding: 35px 20px;
+    margin: 0 auto 30px;
+    max-width: 1100px;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .main-header h1 {
-    color: #D4A017;
+    font-family: 'Poppins', sans-serif;
     font-size: 32px;
+    margin-bottom: 8px;
 }
 
 .main-header p {
-    color: #E0E5ED;
-}
-
-/* Main content */
-.container {
-    max-width: 850px;
-    margin: 30px auto;
-}
-
-/* Cards */
-.card {
-    background-color: white;
-    padding: 25px;
-    margin-bottom: 25px;
-    border-radius: 12px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-}
-
-#add-expense {
-    border-left: 5px solid #D4A017;
-}
-
-#your-expenses {
-    border-left: 5px solid #234B75;
-}
-
-h2 {
-    color: #101D35;
-    margin-top: 0;
-}
-
-/* Form styling */
-label {
-    display: block;
-    font-weight: bold;
-    margin-top: 15px;
-    margin-bottom: 8px;
-    color: #34445A;
-}
-
-/* Advanced selector 1: descendant selector */
-.add-expense-section input,
-.add-expense-section select {
-    display: block;
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #BCC7D4;
-    border-radius: 7px;
+    color: #DCEAE5;
     font-size: 15px;
 }
 
-/* Advanced selector 2: focus pseudo-class */
-input:focus,
-select:focus {
-    outline: 2px solid #D4A017;
-    border-color: #234B75;
+/* Main content container */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
-/* Advanced selector 3: negation pseudo-class */
-input:not([type="submit"]) {
-    background-color: #FAFCFE;
+/* Form and expense cards */
+.card {
+    background-color: #FFFFFF;
+    padding: 28px;
+    margin-bottom: 28px;
+    border: 1px solid #E1E9E5;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-/* Button */
-#add-expense-btn {
+/* Section headings */
+h2 {
+    font-family: 'Poppins', sans-serif;
+    color: #123C35;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+/* Form labels */
+#expense-form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 7px;
+    color: #344B43;
+}
+
+/* Form inputs and category selector */
+#expense-form input,
+#expense-form select {
     width: 100%;
-    margin-top: 22px;
     padding: 13px;
-    background-color: #234B75;
-    color: white;
+    margin-bottom: 18px;
+    border: 1px solid #CBD8D1;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    background-color: #FFFFFF;
+    outline: none;
+}
+
+/* Input focus effect */
+#expense-form input:focus,
+#expense-form select:focus {
+    border-color: #198754;
+    box-shadow: 0 0 0 3px rgba(25, 135, 84, 0.12);
+}
+
+/* Add Expense button */
+#add-expense-btn {
+    background-color: #198754;
+    color: #FFFFFF;
     border: none;
-    border-radius: 7px;
-    font-size: 16px;
+    padding: 13px 25px;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 #add-expense-btn:hover {
-    background-color: #101D35;
+    background-color: #123C35;
 }
 
 /* Expense table */
@@ -118,70 +117,98 @@ input:not([type="submit"]) {
     width: 100%;
     border-collapse: collapse;
     margin-top: 15px;
+    overflow: hidden;
 }
 
-#expense-table th,
-#expense-table td {
-    border: 1px solid #BCC7D4;
-    padding: 13px;
-    text-align: left;
-}
-
-/* Colored table header */
+/* Table headings */
 #expense-table thead {
-    background-color: #101D35;
-    color: white;
+    background-color: #123C35;
+    color: #FFFFFF;
 }
 
-/* Advanced selector 4: position pseudo-class */
+#expense-table th {
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+}
+
+/* Table cells */
+#expense-table td {
+    padding: 14px 15px;
+    border-bottom: 1px solid #E1E9E5;
+}
+
+/* Alternating table rows */
 #expense-table tbody tr:nth-child(even) {
-    background-color: #E8EEF5;
+    background-color: #F0F6F2;
+}
+
+#expense-table tbody tr:nth-child(odd) {
+    background-color: #FFFFFF;
 }
 
 /* Table hover effect */
 #expense-table tbody tr:hover {
-    background-color: #D4E4F5;
+    background-color: #E1F0E7;
 }
 
-/* Descendant selector */
-.expenses-section td {
-    color: #263238;
-}
-
-/* Details section */
-details {
-    padding: 12px;
-    background-color: #F1F3F5;
-    border-radius: 7px;
-}
-
-summary {
-    cursor: pointer;
-    font-weight: bold;
-    color: #234B75;
-}
-
-/* Video section */
-.video-section iframe {
-    display: block;
-    max-width: 100%;
-    margin-top: 15px;
+/* Existing expense list, if used */
+#expense-list li {
+    padding: 13px;
+    margin-bottom: 10px;
+    background-color: #F0F6F2;
+    border: 1px solid #E1E9E5;
     border-radius: 8px;
 }
 
-/* Responsive layout */
+/* Responsive design */
 @media (max-width: 600px) {
     body {
         padding: 12px;
     }
 
+    .main-header h1 {
+        font-size: 25px;
+    }
+
     .card {
-        padding: 15px;
+        padding: 18px;
+    }
+
+    #expense-table {
+        font-size: 13px;
     }
 
     #expense-table th,
     #expense-table td {
-        padding: 8px;
-        font-size: 13px;
+        padding: 9px;
     }
+}
+
+
+/* Extra table structure */
+#expense-table {
+    border: 1px solid #CBD8D1;
+}
+
+/* Budgeting video responsiveness */
+.video-section iframe {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+/* How to use section */
+details {
+    background-color: #F0F6F2;
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid #E1E9E5;
+}
+
+summary {
+    color: #123C35;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 10px;
 }

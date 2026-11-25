@@ -55,3 +55,90 @@ Koang Duay Gatluak
 ## Project Purpose
 
 This project was developed as part of the Week 4 Web Development assignment, focusing on rebuilding a financial dashboard using CSS Grid and Flexbox.
+# SpendWise – Week 6 JavaScript Foundation
+
+## Project Description
+
+SpendWise is a personal budget tracking application designed to help users manage their monthly budgets, record expenses, calculate total spending, and monitor their remaining balances.
+
+This Week 6 assignment introduces JavaScript functionality to transform SpendWise into a data-processing application.
+
+## JavaScript Concepts Implemented
+
+The project demonstrates the following JavaScript concepts:
+
+1. Variables and constants.
+2. Data types.
+3. User input using `prompt()`.
+4. Conditional statements (`if`, `else if`, and `else`).
+5. Loops (`while` and `for`).
+6. Arrays and objects.
+7. Reusable functions.
+8. Arithmetic calculations.
+9. Console output using `console.log()`.
+
+## How Variables Are Used
+
+The application uses variables to store important budgeting information:
+
+- `monthlyBudget` stores the user's monthly budget.
+- `totalExpenses` stores the total amount spent.
+- `remainingBalance` stores the money remaining.
+- `expenses` stores individual expense records.
+- `currency` stores the currency label.
+
+## How User Input Is Collected
+
+SpendWise uses JavaScript's `prompt()` function to collect information from users.
+
+Users can enter:
+- Their monthly budget.
+- Expense names.
+- Expense amounts.
+- Menu choices.
+
+The application validates user input before processing it.
+
+## How Calculations Are Performed
+
+SpendWise calculates total expenses by adding the amounts of all recorded expenses.
+
+The remaining balance is calculated using:
+
+Remaining Balance = Monthly Budget - Total Expenses
+
+## How Functions Organize the Code
+
+The application uses reusable functions:
+
+- `collectBudgetInput()` collects the monthly budget.
+- `addExpense()` records new expenses.
+- `calculateTotalExpenses()` calculates total spending.
+- `calculateRemainingBalance()` calculates the remaining budget.
+- `displayResults()` displays the budget summary.
+- `startSpendWise()` controls the application.
+
+## How to Run the Project
+
+1. Download or clone the repository.
+2. Open the project folder in Visual Studio Code.
+3. Open `index.html` in a browser using Live Server.
+4. Enter your monthly budget when prompted.
+5. Add expenses using the SpendWise menu.
+6. Open the browser Developer Tools using F12.
+7. Select the Console tab to view the results.
+
+## Project Files
+
+- `index.html` – Application structure.
+- `style.css` – Application styling.
+- `script.js` – JavaScript functionality.
+- `README.md` – Project documentation.
+
+## Author
+
+Koang Duay Gatluak
+
+## Project
+
+SpendWise – Week 6 JavaScript Foundation

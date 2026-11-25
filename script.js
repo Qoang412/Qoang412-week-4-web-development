@@ -1,11 +1,11 @@
-
-// ========================================
+﻿// ========================================
 // SPENDWISE - WEEK 6 JAVASCRIPT FOUNDATION
 // ========================================
 
 // 1. VARIABLES AND DATA TYPES
 
 let monthlyBudget = 0;
+let totalIncome = 0;
 let totalExpenses = 0;
 let remainingBalance = 0;
 
@@ -14,71 +14,79 @@ let expenses = [];
 const currency = "KSh";
 
 
-// 2. FUNCTION TO COLLECT USER INPUT
+// 2. FORMAT CURRENCY
+
+function formatCurrency(amount) {
+    return currency + " " + amount.toLocaleString("en-KE", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    });
+}
+
+
+// 3. COLLECT USER BUDGET
 
 function collectBudgetInput() {
-    let budgetInput = prompt(
-        "Welcome to SpendWise!\nEnter your monthly budget (KSh):"
+    const budgetInput = prompt(
+        "Welcome to SpendWise!\nEnter your monthly income/budget (KSh):"
     );
-
-    monthlyBudget = Number(budgetInput);
 
     if (
         budgetInput === null ||
         budgetInput.trim() === "" ||
-        !Number.isFinite(monthlyBudget) ||
-        monthlyBudget <= 0
+        !Number.isFinite(Number(budgetInput)) ||
+        Number(budgetInput) <= 0
     ) {
-        console.log("Please enter a valid monthly budget.");
+        console.log("Invalid budget. Please refresh and try again.");
         return false;
     }
+
+    monthlyBudget = Number(budgetInput);
+    totalIncome = monthlyBudget;
 
     return true;
 }
 
 
-// 3. FUNCTION TO ADD EXPENSES
+// 4. COLLECT EXPENSE INFORMATION
 
 function addExpense() {
-    let expenseName = prompt("Enter expense name:");
+    const expenseName = prompt("Enter expense name:");
 
     if (expenseName === null || expenseName.trim() === "") {
         console.log("Expense name is required.");
         return;
     }
 
-    let expenseAmountInput = prompt(
+    const amountInput = prompt(
         "Enter expense amount (KSh):"
     );
 
     if (
-        expenseAmountInput === null ||
-        expenseAmountInput.trim() === ""
+        amountInput === null ||
+        amountInput.trim() === "" ||
+        !Number.isFinite(Number(amountInput)) ||
+        Number(amountInput) <= 0
     ) {
         console.log("Please enter a valid expense amount.");
         return;
     }
 
-    let expenseAmount = Number(expenseAmountInput);
+    const expenseAmount = Number(amountInput);
 
-    if (!Number.isFinite(expenseAmount) || expenseAmount <= 0) {
-        console.log("Expense amount must be greater than zero.");
-        return;
-    }
-
-    // Store expense information in an object
-    let expense = {
+    // Store expense as an object inside an array
+    const expense = {
         name: expenseName.trim(),
         amount: expenseAmount
     };
 
     expenses.push(expense);
 
-    console.log("Expense added successfully!");
+    console.log("Expense added successfully:", expense);
 }
 
 
-// 4. FUNCTION TO CALCULATE TOTAL EXPENSES
+// 5. CALCULATE TOTAL EXPENSES
 
 function calculateTotalExpenses() {
     totalExpenses = 0;
@@ -91,103 +99,122 @@ function calculateTotalExpenses() {
 }
 
 
-// 5. FUNCTION TO CALCULATE REMAINING BALANCE
+// 6. CALCULATE REMAINING BALANCE
 
 function calculateRemainingBalance() {
     calculateTotalExpenses();
 
-    remainingBalance = monthlyBudget - totalExpenses;
+    remainingBalance = totalIncome - totalExpenses;
 
     return remainingBalance;
 }
 
 
-// 6. FUNCTION TO DISPLAY RESULTS
+// 7. UPDATE DASHBOARD
+
+function updateDashboard() {
+    calculateTotalExpenses();
+    calculateRemainingBalance();
+
+    const summaryCards = document.querySelectorAll(
+        ".summary-card"
+    );
+
+    if (summaryCards.length >= 3) {
+        summaryCards[0].querySelector("h2").textContent =
+            formatCurrency(remainingBalance);
+
+        summaryCards[1].querySelector("h2").textContent =
+            formatCurrency(totalIncome);
+
+        summaryCards[2].querySelector("h2").textContent =
+            formatCurrency(totalExpenses);
+
+        summaryCards[0].querySelector("p").textContent =
+            "Available after expenses";
+
+        summaryCards[1].querySelector("p").textContent =
+            "Monthly budget entered";
+
+        summaryCards[2].querySelector("p").textContent =
+            "Total recorded spending";
+    }
+}
+
+
+// 8. DISPLAY RESULTS IN CONSOLE
 
 function displayResults() {
-    console.clear();
+    calculateTotalExpenses();
+    calculateRemainingBalance();
 
-    console.log("================================");
-    console.log("       SPENDWISE SUMMARY        ");
-    console.log("================================");
+    console.log("====================================");
+    console.log("       SPENDWISE BUDGET SUMMARY     ");
+    console.log("====================================");
 
-    console.log("Monthly Budget: " + currency + " " + monthlyBudget);
+    console.log("Monthly Budget:", formatCurrency(monthlyBudget));
+    console.log("Total Income:", formatCurrency(totalIncome));
+    console.log("Total Expenses:", formatCurrency(totalExpenses));
+    console.log("Remaining Balance:", formatCurrency(remainingBalance));
 
-    console.log("Total Expenses: " + currency + " " + calculateTotalExpenses());
-
-    console.log("Remaining Balance: " + currency + " " + calculateRemainingBalance());
-
-    console.log("--------------------------------");
+    console.log("------------------------------------");
     console.log("EXPENSE DETAILS");
-    console.log("--------------------------------");
+    console.log("------------------------------------");
 
     if (expenses.length === 0) {
-        console.log("No expenses recorded yet.");
+        console.log("No expenses recorded.");
+    } else {
+        console.table(expenses);
     }
-
-    expenses.forEach(function(expense, index) {
-        console.log(
-            (index + 1) + ". " +
-            expense.name + ": " +
-            currency + " " + expense.amount
-        );
-    });
 
     if (remainingBalance < 0) {
         console.log("WARNING: You have exceeded your budget!");
     } else {
-        console.log("You are within your budget.");
+        console.log("STATUS: You are within your budget.");
     }
 
-    console.log("================================");
+    console.log("====================================");
 }
 
 
-// 7. MAIN APPLICATION FUNCTION
+// 9. MAIN APPLICATION
 
 function startSpendWise() {
-
-    let validBudget = collectBudgetInput();
+    const validBudget = collectBudgetInput();
 
     if (!validBudget) {
-        console.log("SpendWise stopped. Please refresh to try again.");
         return;
     }
 
-    let continueAdding = true;
+    let running = true;
 
-    while (continueAdding) {
-
-        let choice = prompt(
+    while (running) {
+        const choice = prompt(
             "SPENDWISE MENU\n\n" +
             "1. Add Expense\n" +
             "2. View Budget Summary\n" +
-            "3. Exit\n\n" +
+            "3. Finish\n\n" +
             "Enter your choice:"
         );
 
         if (choice === null || choice === "3") {
-            continueAdding = false;
-            console.log("Thank you for using SpendWise!");
-        }
-
-        else if (choice === "1") {
+            running = false;
+        } else if (choice === "1") {
             addExpense();
-        }
-
-        else if (choice === "2") {
+        } else if (choice === "2") {
             displayResults();
-        }
-
-        else {
-            console.log("Invalid choice. Please select 1, 2, or 3.");
+        } else {
+            console.log("Invalid choice. Select 1, 2, or 3.");
         }
     }
 
+    updateDashboard();
     displayResults();
+
+    console.log("Thank you for using SpendWise!");
 }
 
 
-// 8. START APPLICATION
+// 10. START APPLICATION
 
 startSpendWise();
